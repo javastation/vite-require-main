@@ -2,7 +2,7 @@
   "name": "vite-require-main",
   "version": "0.0.1",
   "description": "Like Webpack's require",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/javastation/vite-require-main"
