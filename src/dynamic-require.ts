@@ -224,7 +224,7 @@ export class DynamicRequire {
         // TODO: execute the Options.onFiles
 
         if (!files.length) continue
-
+        // @ts-ignore
         const maps = mappingPath(files, resolved)
         const runtimeFnName = `__matchRequireRuntime${counter}__`
         let counter2 = 0
