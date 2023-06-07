@@ -1,0 +1,36 @@
+{
+  "name": "vite-require-main",
+  "version": "0.1",
+  "description": "Like Webpack's require",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javastation/vite-require-main"
+  },
+  "author": "https://github.com/javastation",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "test": "vite -c test/vite.config.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "fast-glob": "~3.2.12",
+    "vite-plugin-dynamic-import": "~1.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.36",
+    "typescript": "^4.7.4",
+    "vite": "^4.3.9"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "webpack",
+    "dynamic",
+    "require"
+  ],
+  "files": [
+    "dist"
+  ]
+}
