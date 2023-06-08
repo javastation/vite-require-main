@@ -1,7 +1,11 @@
 # vite-require-main
 
 Like Webpack's require
-require(alias + bar)
+
+such as：
+```
+<img :src="require(`assets/img/home/svg/icon-usr${iconName}.svg`)" alt />
+```
 
 📦 Out of the box  
 
