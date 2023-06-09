@@ -1,6 +1,6 @@
 import path from 'path'
 import fastGlob from 'fast-glob'
-import { type ResolvedConfig } from 'vite'
+import { type ResolvedConfig ,type TransformResult} from 'vite'
 import { TopScopeType, type Analyzed } from './analyze'
 import { type Options } from './index'
 import {
@@ -40,7 +40,7 @@ export class DynamicRequire {
     private config: ResolvedConfig,
     private resolve = new Resolve(config),
   ) { }
-  public async transform(analyzed: Analyzed, importer: string): Promise<string> {
+  public async transform(analyzed: Analyzed, importer: string): Promise<TransformResult> {
     const { code, require: statements } = analyzed
     const ms = new MagicString(code)
     const promotionImports: string[] = []
@@ -281,7 +281,7 @@ ${cases.join('\n')}
     }
 
     const str = ms.toString()
-    return str === code ? null : str
+    return {code:str,map:null}
   }
 
   /**
