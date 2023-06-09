@@ -37,13 +37,11 @@ export function viteRequire(options: Options = {}): Plugin {
 
   return {
     name: 'vite-require',
+    apply:'serve',
     configResolved(_config) {
       config = _config
       options.extensions = [...new Set((config.resolve?.extensions || extensions).concat(options.extensions || []))]
       dynamicRequire = new DynamicRequire(options, _config)
-    },
-    resolveId(importee, importer, resolveOptions) {
-      console.log(importee);
     },
     transform(code, id) {
       const pureId = cleanUrl(id)
