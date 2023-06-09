@@ -9,7 +9,6 @@ such as：
 
 📦 Out of the box  
 
-🔨 Work only in the `vite serve` phase  
 
 ## Install
 

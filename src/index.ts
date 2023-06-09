@@ -37,7 +37,6 @@ export function viteRequire(options: Options = {}): Plugin {
 
   return {
     name: 'vite-require',
-    apply:'serve',
     configResolved(_config) {
       config = _config
       options.extensions = [...new Set((config.resolve?.extensions || extensions).concat(options.extensions || []))]
